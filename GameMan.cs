@@ -4,6 +4,7 @@ class GameMan()
     {
         Debug.Log("자신있는 분야"); 
          
+
          
     }
 }

@@ -1,15 +1,18 @@
-#include <iostream>
+#include "favorite_food.h"
 
-using namespace std;
+FavoriteFood::FavoriteFood() {
+    // Initialize the favorite foods
+    foodPreferences = {
+        {"John", "Pizza"},
+        {"Bob", "Burger"},
+        {"Alice", "Pasta"}
+    };
+}
 
-class test{
-    public:
-        test(){
-            cout << "Constructor called" << endl;
-        }
-        ~test(){
-            cout << "Destructor called" << endl;
-        } 
-    private:
-        int a;
+std::string FavoriteFood::getFavoriteFood(const std::string& name) const {
+    auto it = foodPreferences.find(name);
+    if (it != foodPreferences.end()) {
+        return it->second;
+    }
+    return "Unknown";
 }
